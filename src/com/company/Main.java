@@ -277,7 +277,7 @@ public class Main {
         }
         print(matrix);
     }
-
+    
     private static void print(int[][] matrix) {
         for (int i = 0, n = matrix.length; i < n; i++) {
             System.out.println(Arrays.toString(matrix[i]));
