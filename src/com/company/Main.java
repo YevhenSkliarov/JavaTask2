@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        /*Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         System.out.println("input count of numbers");
         int num = in.nextInt();
         int[] array = new int[num];
@@ -179,9 +179,9 @@ public class Main {
                 System.out.println(array[i]);
                 break;
             }
-        }*/
+        }
         //Task 8:
-        /*Scanner in3 = new Scanner(System.in);
+        Scanner in3 = new Scanner(System.in);
         System.out.print("input last matrix number: ");
         int first = 0;
         int last = in3.nextInt();
@@ -194,10 +194,10 @@ public class Main {
                 System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
-        }*/
+        }
 
         //Task 9:
-        Scanner sc = new Scanner(System.in);
+        /*Scanner sc = new Scanner(System.in);
         System.out.print("Please input matrix size: ");
         int num = sc.nextInt();
         int[][] matrix = new int[num][num];
@@ -212,10 +212,10 @@ public class Main {
             }
             System.out.println();
         }
-        System.out.println();
+        System.out.println();*/
 
         //Task 9.1: row sort
-        /*for (int k = 0; k < matrix.length-1; k++) {
+        for (int k = 0; k < matrix.length-1; k++) {
             for (int i = 0; i < matrix.length; i++) {
                 for (int j = 0; j <matrix.length-1; j++) {
                     int current = matrix[i][j];
@@ -227,9 +227,9 @@ public class Main {
                 }
             }
         }
-        print(matrix);*/
+        print(matrix);
         //Task 9.1: row sort
-        /*int j;
+        int j;
         for (int k = 0; k < matrix.length; k++) {
             for (int i = 0; i < matrix.length; i++) {
                 for (j = 0; j < matrix.length; j++) {
@@ -246,7 +246,8 @@ public class Main {
                 }
             }
         }
-        print(matrix);*/
+        print(matrix);
+
         //Task 9.2:right shift
         Scanner sc1 = new Scanner(System.in);
         System.out.print("Please input slide step: ");
@@ -264,7 +265,7 @@ public class Main {
         print(matrix);*/
 
         //Task 9.2:left shift
-        int j;
+        /*int j;
         for (int k = 0; k < step; k++) {
             for (int i = 0; i < matrix.length; i++) {
                 int buff = matrix[i][0];
@@ -275,9 +276,36 @@ public class Main {
             }
 
         }
-        print(matrix);
+        print(matrix);*/
+
+        //Task 9.2:shift down
+        /*int i;
+        for (int k = 0; k < step; k++) {
+            for (int j = 0; j < matrix.length; j++) {
+                int buff = matrix[matrix.length-1][j];
+                for ( i = matrix.length - 1; i > 0; i--) {
+                    matrix[i][j] = matrix[i-1][j];
+                }
+                matrix[i][j] = buff;
+            }
+        }
+        print(matrix);*/
+
+        //Task 9.2:up shift
+        /*int i;
+        for (int k = 0; k < step; k++) {
+            for (int j = 0; j < matrix.length; j++) {
+                int buff = matrix[0][j];
+                for (i = 0; i < matrix.length-1; i++) {
+                    matrix[i][j]=matrix[i+1][j];
+                }
+                matrix[i][j] = buff;
+            }
+
+        }
+        print(matrix);*/
     }
-    
+
     private static void print(int[][] matrix) {
         for (int i = 0, n = matrix.length; i < n; i++) {
             System.out.println(Arrays.toString(matrix[i]));
