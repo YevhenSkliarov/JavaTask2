@@ -2,12 +2,13 @@ package com.company;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        /*Scanner in = new Scanner(System.in);
         System.out.println("input count of numbers");
         int num = in.nextInt();
         int[] array = new int[num];
@@ -178,6 +179,108 @@ public class Main {
                 System.out.println(array[i]);
                 break;
             }
+        }*/
+        //Task 8:
+        /*Scanner in3 = new Scanner(System.in);
+        System.out.print("input last matrix number: ");
+        int first = 0;
+        int last = in3.nextInt();
+        int size = (int) Math.sqrt(last);
+        int[][] matrix = new int[size][size];
+        for (int i = 0; i < size ; i++) {
+            for (int j = 0; j < size; j++) {
+                first++;
+                matrix[i][j] = first;
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }*/
+
+        //Task 9:
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Please input matrix size: ");
+        int num = sc.nextInt();
+        int[][] matrix = new int[num][num];
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                Random random = new Random();
+                int rand = random.nextInt(num);
+                int rnd = (int) (Math.random() * (2 * rand + 1)) - rand;
+                matrix[i][j] = rnd;
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+        //Task 9.1: row sort
+        /*for (int k = 0; k < matrix.length-1; k++) {
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j <matrix.length-1; j++) {
+                    int current = matrix[i][j];
+                    int next = matrix[i][j + 1];
+                    if (matrix[i][j] > matrix[i][j + 1]) {
+                        matrix[i][j] = next;
+                        matrix[i][j + 1] = current;
+                    }
+                }
+            }
+        }
+        print(matrix);*/
+        //Task 9.1: row sort
+        /*int j;
+        for (int k = 0; k < matrix.length; k++) {
+            for (int i = 0; i < matrix.length; i++) {
+                for (j = 0; j < matrix.length; j++) {
+                    int current = matrix[i][j];
+                    if (i + 1 > matrix.length - 1) {
+                        break;
+                    } else {
+                        int next = matrix[i + 1][j];
+                        if (matrix[i][j] > matrix[i + 1][j]) {
+                            matrix[i][j] = next;
+                            matrix[i + 1][j] = current;
+                        }
+                    }
+                }
+            }
+        }
+        print(matrix);*/
+        //Task 9.2:right shift
+        Scanner sc1 = new Scanner(System.in);
+        System.out.print("Please input slide step: ");
+        int step = sc1.nextInt();
+        /*int j;
+        for (int k = 0; k < step; k++) {
+            for (int i = 0; i < matrix.length; i++) {
+                int buff = matrix[i][matrix.length - 1];
+                for ( j = matrix.length - 1; j > 0; j--) {
+                    matrix[i][j] = matrix[i][j - 1];
+                }
+                matrix[i][j] = buff;
+            }
+        }
+        print(matrix);*/
+
+        //Task 9.2:left shift
+        int j;
+        for (int k = 0; k < step; k++) {
+            for (int i = 0; i < matrix.length; i++) {
+                int buff = matrix[i][0];
+                for (j = 0; j < matrix.length-1; j++) {
+                    matrix[i][j]=matrix[i][j+1];
+                }
+                matrix[i][j] = buff;
+            }
+
+        }
+        print(matrix);
+    }
+
+    private static void print(int[][] matrix) {
+        for (int i = 0, n = matrix.length; i < n; i++) {
+            System.out.println(Arrays.toString(matrix[i]));
         }
     }
 }
