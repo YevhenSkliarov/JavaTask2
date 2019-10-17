@@ -26,7 +26,8 @@ public class Main {
         increaseValuesInRow(generateMatrix());
         decreaseValuesInRow(generateMatrix());
         turnOn90(generateMatrix());*/
-        turnOn90toLeft(generateMatrix());
+       // turnOn90toLeft(generateMatrix());
+        turnOn180(generateMatrix());
     }
 
     private static void print(int[][] matrix) {
@@ -216,6 +217,19 @@ public class Main {
         print(nmatrix);
         return nmatrix;
     }
+
+    private static int[][] turnOn180(int[][] matrix) {
+        int[][] nmatrix = new int[matrix.length][matrix.length];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                nmatrix[i][j] = matrix[matrix.length - 1 - i][matrix.length - 1 - j];
+            }
+        }
+        System.out.println();
+        print(nmatrix);
+        return nmatrix;
+    }
+
 
     private static int decreaseValuesInRow(int[][] matrix) {
         int[] arr = new int[matrix.length * matrix.length];
