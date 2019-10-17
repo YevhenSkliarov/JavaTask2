@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        MaxAndMinLength();
+        /*MaxAndMinLength();
         sortFromMinToMaxAndMaxToMin();
         printNumbersThatHaveLengthMoreThanAverageAndLess();
         findFirstNumberWithMinDifferentNumbers();
@@ -25,7 +25,8 @@ public class Main {
         downShift(generateMatrix());
         increaseValuesInRow(generateMatrix());
         decreaseValuesInRow(generateMatrix());
-        turnOn90(generateMatrix());
+        turnOn90(generateMatrix());*/
+        turnOn90toLeft(generateMatrix());
     }
 
     private static void print(int[][] matrix) {
@@ -197,6 +198,18 @@ public class Main {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
                 nmatrix[i][j] = matrix[matrix.length - j - 1][i];
+            }
+        }
+        System.out.println();
+        print(nmatrix);
+        return nmatrix;
+    }
+
+    private static int[][] turnOn90toLeft(int[][] matrix) {
+        int[][] nmatrix = new int[matrix.length][matrix.length];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                nmatrix[i][j] = matrix[j][matrix.length - i - 1];
             }
         }
         System.out.println();
