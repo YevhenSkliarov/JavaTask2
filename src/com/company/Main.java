@@ -8,11 +8,11 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        MaxAndMinLength();
+        /*MaxAndMinLength();
         sortFromMinToMaxAndMaxToMin();
-        printNumbersThatHaveLengthMoreThanAverageAndLess();
+        printNumbersThatHaveLengthMoreThanAverageAndLess();*/
         findFirstNumberWithMinDifferentNumbers();
-        findCountOfEvenNumbersAndCountOfNumbersWithEvenEqualOddNumbers();
+        /*findCountOfEvenNumbersAndCountOfNumbersWithEvenEqualOddNumbers();
         RowNumbersIncrease();
         findNumberWithMaxDiffNumbers();
         generateMatrixform1toK();
@@ -28,7 +28,7 @@ public class Main {
         turnOn90(generateMatrix());
         turnOn90toLeft(generateMatrix());
         turnOn180(generateMatrix());
-        turnOn270(generateMatrix());
+        turnOn270(generateMatrix());*/
     }
 
     private static void print(int[][] matrix) {
@@ -164,12 +164,11 @@ public class Main {
             }
             valLenght[i] = diff;
         }
-        int min = 1;
+        int min = valLenght[0];
         int index = 0;
-        for (int i = 0; i < valLenght.length; i++) {
-            if (valLenght[i] <= min) {
+        for (int i = 1; i < valLenght.length; i++) {
+            if (valLenght[i] < min) {
                 index = i;
-                break;
             }
         }
         System.out.println(array[index]);
