@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        MaxAndMinLength();
+        /*MaxAndMinLength();
         sortFromMinToMaxAndMaxToMin();
         printNumbersThatHaveLengthMoreThanAverageAndLess();
         findFirstNumberWithMinDifferentNumbers();
@@ -16,10 +16,10 @@ public class Main {
         RowNumbersIncrease();
         findNumberWithMaxDiffNumbers();
         generateMatrixform1toK();
-        generateMatrix();
+        generateMatrix();*/
         rowSort(generateMatrix());
         columnSort(generateMatrix());
-        rightShift(generateMatrix());
+        /*rightShift(generateMatrix());
         leftShift(generateMatrix());
         upShift(generateMatrix());
         downShift(generateMatrix());
@@ -28,7 +28,7 @@ public class Main {
         turnOn90(generateMatrix());
         turnOn90toLeft(generateMatrix());
         turnOn180(generateMatrix());
-        turnOn270(generateMatrix());
+        turnOn270(generateMatrix());*/
     }
 
     private static void print(int[][] matrix) {
@@ -290,7 +290,9 @@ public class Main {
             }
 
         }
-        return count > saved ? count : saved;
+        int total = count > saved ? count : saved;
+        System.out.println(total);
+        return total;
     }
 
     public static int[][] rowSort(int[][] matrix) {
@@ -311,19 +313,14 @@ public class Main {
     }
 
     private static int[][] columnSort(int[][] matrix) {
-        int j;
-        for (int k = 0; k < matrix.length; k++) {
-            for (int i = 0; i < matrix.length; i++) {
-                for (j = 0; j < matrix.length; j++) {
+        for (int k = 0; k < matrix.length - 1; k++) {
+            for (int i = 0; i < matrix.length - 1; i++) {
+                for (int j = 0; j < matrix.length; j++) {
                     int current = matrix[i][j];
-                    if (i + 1 > matrix.length - 1) {
-                        break;
-                    } else {
-                        int next = matrix[i + 1][j];
-                        if (matrix[i][j] > matrix[i + 1][j]) {
-                            matrix[i][j] = next;
-                            matrix[i + 1][j] = current;
-                        }
+                    int next = matrix[i + 1][j];
+                    if (matrix[i][j] > matrix[i + 1][j]) {
+                        matrix[i][j] = next;
+                        matrix[i + 1][j] = current;
                     }
                 }
             }
