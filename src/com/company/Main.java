@@ -508,16 +508,6 @@ public class Main {
     }
 
     private static void generateMatrixform1toK() {
-        Scanner in = new Scanner(System.in);
-        System.out.println("input count of numbers");
-        int num = in.nextInt();
-        int[] array = new int[num];
-        for (int i = 0; i < array.length; i++) {
-            Scanner in1 = new Scanner(System.in);
-            System.out.print("Input number #" + (i + 1) + " ");
-            array[i] = in1.nextInt();
-        }
-
         //Task 8:
         Scanner in3 = new Scanner(System.in);
         System.out.print("input last matrix number: ");
